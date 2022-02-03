@@ -1,0 +1,18 @@
+<div class="input-wrapper" [class.required]="required">
+	<label>{{label}}</label>
+	<input type="text"
+	       [required]="required"
+	       [disabled]="disabled"
+	       [minLength]="minLength"
+	       [placeholder]="placeholder"
+           [(ngModel)]="data"
+	       (input)="onChange()"
+	       (blur)="onTouchedFn()"/>
+	<div class="error-message" *ngIf="showError">
+		{{errors[0]}}
+	</div>
+
+    <!-- <small class="text-danger d-block" *ngIf="control.errors && control.errors.required">Field is required</small> -->
+</div>
+
+<!-- (change)="onChange()" -->

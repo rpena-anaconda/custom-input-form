@@ -1,0 +1,27 @@
+<label>{{ label }}</label>
+<input 
+    [type]="type"
+    [placeholder]="placeholder"
+    [value]="value"
+    [disabled]="disabled"
+    (input)="onChange()"
+    (change)="onChange()"
+    (blur)="onTouched()" 
+/>
+
+<!-- (input)="onChange($event.target?.value)" -->
+<!-- 
+    [required]="required"
+    [disabled]="disabled"
+    [minlength]="minlength"
+    [placeholder]="placeholder"
+    [(ngModel)]="data"
+    [ngModelOptions]="{standalone: true}"
+    (input)="onChange()"
+    (change)="onChange()"
+    (blur)="onTouchedFn()"/>
+ -->
+
+<div class="error-message" *ngIf="showError">
+    {{errors[0]}}
+</div>
